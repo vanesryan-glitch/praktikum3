@@ -1,0 +1,204 @@
+/* main.css - Unified Core Stylesheet for Smart Noted */
+:root {
+    --primary-bg: #f8fafc;    /* Neutral Background */
+    --secondary-ui: #1e3a8a;  /* Secondary/UI Elements */
+    --accent-color: #6366f1;  /* Accents/Buttons */
+    --accent-hover: #4f46e5;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --white: #ffffff;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+body {
+    background: #f8fafc;
+    opacity: 1 !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.app-wrapper {
+    background-color: var(--primary-bg);
+    color: var(--text-main);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Navbar */
+nav {
+    background-color: var(--secondary-ui);
+    color: var(--white);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo i {
+    font-size: 2rem;
+    color: #a5b4fc;
+}
+
+.navbar, .nav-right {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar a, .nav-right a, .nav-right .dropdown-btn {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1rem;
+}
+
+.navbar a:hover, .nav-right a:hover, .nav-right .dropdown-btn:hover {
+    color: #a5b4fc;
+}
+
+.navbar a.active {
+    color: #a5b4fc;
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--white);
+    min-width: 200px;
+    box-shadow: var(--shadow-lg);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: var(--text-main);
+    transition: 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background: var(--primary-bg);
+    color: var(--secondary-ui);
+}
+
+/* Base Buttons */
+.cta, .btn, .btn-primary {
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.cta:hover, .btn:hover, .btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 2px solid #e2e8f0;
+    color: var(--text-main);
+    background: transparent;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-secondary:hover {
+    background: #f1f5f9;
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Base Container */
+.main, .container, .main-wrapper {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-ui);
+    color: var(--white);
+    padding: 2.5rem 5%;
+    margin-top: auto;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar { display: none; }
+}
